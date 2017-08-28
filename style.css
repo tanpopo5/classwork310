@@ -1,0 +1,26 @@
+body {
+    font-size: 14px;
+    background-color: white;
+}
+
+h1 { 
+    text-align: center;
+    color: cadetblue;
+    border-bottom: 2px dotted cadetblue;
+    padding-bottom: 0.5em;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    display: inline-block;
+    padding: 3px 20px;
+    margin-left: 0.5em;
+    border: 1px solid gray;
+}
+
+img {
+    position: relative;
+}

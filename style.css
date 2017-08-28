@@ -12,15 +12,31 @@ h1 {
 
 a {
     text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: orange;
+}
+
+a:active {
+    color: fuchsia;
 }
 
 li {
     display: inline-block;
-    padding: 3px 20px;
-    margin-left: 0.5em;
-    border: 1px solid gray;
+    padding: 6px 20px;
+    margin-left: 0.25em;
+    background-color: cadetblue;
 }
 
 img {
     position: relative;
+}
+.cimg {
+    max-width: 60%;
+    margin: 0 auto;
+}
+footer {
+    border-top: 2px dotted cadetblue;
 }

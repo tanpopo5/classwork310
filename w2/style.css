@@ -1,8 +1,16 @@
-body {
-    
+body { 
 }
 #home {
-   
+    width: 90%;
+    margin: 2em auto;
+    border: 1px solid #CCC;
+    padding: 2em;
+}
+input {
+    padding: 3px;
+}
+input:focus {
+    color: #f44;
 }
 
 a {

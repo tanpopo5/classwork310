@@ -1,4 +1,6 @@
-Dear School Nurse:
-          [1]                     [2]           will not be attending school today. He/she has come down with a case of           [3]           and has horrible           [4]           and a/an           [5]           fever. We have made an appointment with the           [6]           Dr.           [7]          , who studied for many years in           [8]           and has           [9]           degrees in pediatrics. He will send you all the information you need. Thank you!
-Sincerely
-Mrs.           [10]          .
+"Dear School Nurse:" + silly1.value + "<br>" +
+lastname.value + " will not be attending school today. He/she has come down with a case of " + illness.value + " and has horrible " + noun.value + " and a/an " + adj1.value + " fever. We have made an appointment with the " + adj2.value + " Dr." + silly2.value + ", who studied for many years in " + place.value + " and has " + num.value + " degrees in pediatrics. He will send you all the information you need. Thank you!<br>" + "Sincerely<br>" + "Mrs." + adj3.value + "."
+
+
+silly1.value + lastname.value + illness.value + noun.value + adj1.value + adj2.value + silly2.value + place.value + num.value + adj3.value;
+

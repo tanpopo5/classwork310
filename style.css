@@ -31,11 +31,12 @@ li {
 }
 
 img {
-    position: relative;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0;
 }
-.cimg {
-    max-width: 60%;
-    margin: 0 auto;
+.mainimg {
+    text-align: center;
 }
 footer {
     border-top: 2px dotted cadetblue;

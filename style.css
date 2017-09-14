@@ -37,7 +37,19 @@ img {
 }
 .mainimg {
     text-align: center;
+    margin-bottom: 1em;
 }
 footer {
     border-top: 2px dotted cadetblue;
 }
+
+@media screen and (max-width:768px) {
+    footer p {
+        text-align: center;
+    }
+}
+@media screen and (max-width:480px) {
+    
+}
+
+

@@ -2,7 +2,7 @@
 
 submit.onclick = function () {
 	var submit = document.getElementById("submit");
-	var silly1 = document.getElementById("silly1");
+	//var silly1 = document.getElementById("silly1");
     var lastname = document.getElementById("lastname");
     var illness = document.getElementById("illness");
 	var noun = document.getElementById("noun");
@@ -15,6 +15,6 @@ submit.onclick = function () {
     var message = document.getElementById("message"); 
 	console.log(message);
     
-    message.innerText = "Dear School Nurse:" + silly1.value + "<br>" + lastname.value + " will not be attending school today. He/she has come down with a case of " + illness.value + " and has horrible " + noun.value + " and a/an " + adj1.value + " fever. We have made an appointment with the " + adj2.value + " Dr." + silly2.value + ", who studied for many years in " + place.value + " and has " + num.value + " degrees in pediatrics. He will send you all the information you need. Thank you!<br>" + "Sincerely<br>" + "Mrs." + adj3.value + ".";
+    message.innerText = "Dear School Nurse: " + lastname.value + " will not be attending school today. He/she has come down with a case of " + illness.value + " and has horrible " + noun.value + " and a/an " + adj1.value + " fever. We have made an appointment with the " + adj2.value + " Dr." + silly2.value + ", who studied for many years in " + place.value + " and has " + num.value + " degrees in pediatrics. He will send you all the information you need. Thank you!" + "Mrs." + adj3.value + ".";
     
 };

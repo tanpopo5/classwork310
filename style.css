@@ -5,9 +5,21 @@ body {
 
 h1 { 
     text-align: center;
-    color: cadetblue;
-    border-bottom: 2px dotted cadetblue;
+    color: #4CA1A1;
+    border-bottom: 2px dotted #4CA1A1;
     padding-bottom: 0.5em;
+}
+.accbox label {
+    display: none;
+}
+.accbox input {
+    display: none;
+}
+li {
+    display: inline-block;
+    padding: 6px 20px;
+    margin-left: 0.25em;
+    background-color: #4CA1A1;
 }
 
 a {
@@ -23,13 +35,6 @@ a:active {
     color: fuchsia;
 }
 
-li {
-    display: inline-block;
-    padding: 6px 20px;
-    margin-left: 0.25em;
-    background-color: cadetblue;
-}
-
 img {
     width: 100%;
     object-fit: cover;
@@ -40,7 +45,7 @@ img {
     margin-bottom: 1em;
 }
 footer {
-    border-top: 2px dotted cadetblue;
+    border-top: 2px dotted #4CA1A1;
 }
 
 @media screen and (max-width:768px) {
@@ -49,7 +54,47 @@ footer {
     }
 }
 @media screen and (max-width:480px) {
-    
+   .accbox {
+        margin: 2em 0;
+        padding: 0;
+        max-width: 400px;/*最大幅*/
+    }
+
+  .accbox label {
+        display: block;
+        margin: 1.5px 0;
+        padding : 11px 12px;
+        color :#FFF;
+        font-weight: bold;
+        background : #4CA1A1;
+        cursor :pointer;
+        transition: all 0.5s;
+    }
+
+    .accbox label:hover {
+        background :#4CA1A1;
+    }
+     .accbox .menushow ul {
+        padding-left: 0;
+        margin: 0;
+    }
+    .accbox .menushow li {
+        display: flex;
+        margin-left: 0;
+        background: #5cc4c4;
+        border-bottom: 1px solid #FFF;
+    }
+    .accbox .menushow {
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: 0.8s;
+    }
+
+    .cssacc:checked + .menushow {
+        height: auto;
+        background: #eaeaea;
+        opacity: 1;
+    }
 }
-
-

@@ -15,6 +15,9 @@ h1 {
 .accbox input {
     display: none;
 }
+ul {
+    text-align: center;
+}
 li {
     display: inline-block;
     padding: 6px 20px;
@@ -45,14 +48,12 @@ img {
 
 footer {
     border-top: 2px dotted #4CA1A1;
+    text-align: center;
 }
 
 @media screen and (max-width:768px) {
     img {
         width: 100%;
-    }
-    footer p {
-        text-align: center;
     }
 }
 @media screen and (max-width:480px) {

@@ -42,9 +42,13 @@ button {
     padding: 1.5em;
     border-radius: 6px;
     box-shadow:0 0 40px -10px #000;
-    line-height: 1.5em;
     letter-spacing: 0.05em;
     display: none;
+}
+
+#message p {
+    padding-bottom: 1em;
+    line-height: 2em;
 }
 
 @media screen and (max-width:768px) {

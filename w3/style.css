@@ -10,6 +10,16 @@ h1 {
     padding-bottom: 0.5em;
 }
 
+.backhome {
+    font-size: 14px;
+    padding-bottom: 1.5em;
+}
+.backhome a {
+    text-decoration: none;
+    color: darkgray;
+    border-bottom: 2px dotted #CCC;
+}
+
 .form {
     background: #FFFFFF;
     width: 90%;

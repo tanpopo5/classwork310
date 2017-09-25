@@ -1,10 +1,13 @@
 body { 
 }
 #home {
-    background: #FFF;
+    background: #6F4E37;
     color: #666;
 }
 h1 {
+    text-align: center;
+    border-bottom: 1px dotted #DDD;
+    padding-bottom: 0.5em;
 }
 
 .form {
@@ -20,35 +23,37 @@ input {
     padding: 4px;
 }
 input:focus {
-    box-shadow: 0 0 1px #3498db;
-    border: 1px solid #3498db;
-}
-button {
-    width: 100%;
-    padding: 10px 30px;
-    margin: 0 auto;
-    font-size: 14px;
-    font-weight: bold;
-    color: #666;
-    /*background: #FFE200;*/
-    border-radius: 8px;
-}
-#message {
-    background: #FFFFFF;
-    width: 90%;
-    margin: 2em auto;
+    box-shadow: 0 0 1px #CCC;
     border: 1px solid #CCC;
-    padding: 1.5em;
-    border-radius: 6px;
-    box-shadow:0 0 40px -10px #000;
-    letter-spacing: 0.05em;
-    display: none;
+}
+#imgchoice input {
+    top: -8em;
 }
 
-#message p {
-    padding-bottom: 1em;
-    line-height: 2em;
+#imgchoice input img {
+    display: inline-block;
+    pointer-events: none;
 }
+button {
+    padding: 10px 30px;
+    margin: 2em 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #47260F;
+    background: #BFA888;
+}
+#message1, #message2, #message3, #message4, #message5, #message6 {
+    color:brown;
+    font-weight: bold;
+}
+
+#totalAns {
+    color: brown;
+    font-size: 24px;
+    padding: 1em 0;
+    letter-spacing: 0.05em;
+}
+
 
 @media screen and (max-width:768px) {
     #home {

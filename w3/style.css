@@ -52,6 +52,7 @@ button {
     font-weight: bold;
     color: #47260F;
     background: #BFA888;
+    font-family: 'Marcellus SC', serif;
 }
 #message1, #message2, #message3, #message4, #message5, #message6 {
     color:brown;

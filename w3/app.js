@@ -61,7 +61,6 @@ for (var i=0; i<caffeine.length; i++) {
     }
 }
 
-　//var arrayAs = ['qz1-2', 'qz2-1', 'qz3-1', 'qz4-1', 'qz5-3', 'qz6-3']; 
 if(qz1==="qz1-2") {
     message1.innerHTML = "You are right!";
     count++;

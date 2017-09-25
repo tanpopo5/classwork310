@@ -107,11 +107,11 @@ if(qz6==="qz6-3") {
 
 if(count==6) {
    totalans.innerHTML = "You are perfect! You got " + count + " /6 Score!";    
-}else if (count <= 5){
+}else if (count >= 5){
     totalans.innerHTML = "You are almost perfect! You got " + count + " /6 Score!";
-}else if (count <= 4) {
+}else if (count >= 4) {
     totalans.innerHTML = "Do you want to be perfect? Try again! You got " + count + " /6 Score!";
-}else if (count < 3 ){
+}else if (count <= 3 ){
     totalans.innerHTML = "You don't like coffee? You got " + count + " /6 Score!";
 }
  

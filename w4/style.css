@@ -52,7 +52,7 @@ input:focus {
 #result {
     position: relative;
     width: 80px;
-    top: 150px;
+    top: 170px;
     margin: 0 auto;
 }
 #message {
@@ -60,7 +60,7 @@ input:focus {
     color: #FFF;
     z-index: 100;
     font-family: 'Play', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
 }
 #btn {
     text-align: center;
@@ -68,14 +68,17 @@ input:focus {
 button {
     width: 400px;
     padding: 10px 30px;
-    margin: 2em 0;
+    margin: 1em 0 0 0;
     font-size: 18px;
     font-weight: bold;
     color: #666
     background-clor: #CCC;
     font-family: 'Berkshire Swash', cursive;
 }
-
+#fsecond {
+    text-align: center;
+    color: #333;
+}
 
 @media screen and (max-width:768px) {
     h1 {
@@ -87,6 +90,9 @@ button {
     }
     #ball {
         width: 94%;
+    }
+    #result {
+        top:150px;
     }
     button {
         width: 260px;

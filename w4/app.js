@@ -1,5 +1,6 @@
 submit.onclick = function () {
-
+    var ball = document.getElementById("ball");
+    var result = document.getElementsByName("result");
     var eightball = [
         "It is certain",
         "It is decidedly so",
@@ -23,14 +24,13 @@ submit.onclick = function () {
         "Very doubtful"    
     ];
          
-var dx = new Array( 12,-20, 8,-16, 20, -4, 16, -8, 4,-12,0);
-var dy = new Array(-20, 8,-16, 12,-12, 16, -4, 20, -8, 4,0);
-var cnt = 0;
-var ball = document.getElementById("ball");
-var result = document.getElementsByName("result");
-var randomess = eightball[Math.floor(Math.random()*eightball.length)];
+    var dx = new Array( 12,-20, 8,-16, 20, -4, 16, -8, 4,-12,0);
+    var dy = new Array(-20, 8,-16, 12,-12, 16, -4, 20, -8, 4,0);
+    var cnt = 0;
     
- var countup = function(){
+    var randomess = eightball[Math.floor(Math.random()*eightball.length)];
+    
+    var countup = function(){
         cnt++;
         ball.style.left = dx[cnt];
         ball.style.top  = dy[cnt];
@@ -39,9 +39,10 @@ var randomess = eightball[Math.floor(Math.random()*eightball.length)];
             clearTimeout(cntid);
             ball.src = 'eightball2.png';
             message.innerHTML = randomess;
-        }
-       
+        }       
     }
-    countup();   
+    countup();
+    
+    setTimeout("location.reload()",5000);
     
 };

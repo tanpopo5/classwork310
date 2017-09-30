@@ -1,22 +1,19 @@
-body {
-    
-}
-#home {
-    background: #6F4E37;
-    color: #666;
-}
+body { background-color: cadetblue; }
+
 h1 {
     text-align: center;
     padding-bottom: 0.5em;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 40px;
+    margin-top: 0;
 }
-
 .backhome {
     font-size: 14px;
-    padding-bottom: 1.5em;
+    padding-bottom: 1em;
 }
 .backhome a {
     text-decoration: none;
-    color: darkgray;
+    color: #FFF;
     border-bottom: 2px dotted #CCC;
 }
 #question {
@@ -28,12 +25,14 @@ h1 {
     padding: 0.5em;
     margin: 0 auto;
     font-size: 16px;
+    font-family: 'Berkshire Swash', cursive;
 }
 
 input:focus {
     box-shadow: 0 0 1px #CCC;
     border: 1px solid #CCC;
 }
+
 .ballp {
     position: absolute;
     
@@ -42,18 +41,17 @@ input:focus {
     position: relative;
     margin: 0 auto;
     width: 410px;
+    
 }
 #ball {
    top:0;
    left: 0;
-    z-index: 0;
-}
-img.imgrotate {
-    display: block;
+   z-index: 0;
+   margin-bottom: 3em;
 }
 #result {
     position: relative;
-    width: 50px;
+    width: 80px;
     top: 150px;
     margin: 0 auto;
 }
@@ -61,6 +59,8 @@ img.imgrotate {
     text-align: center;
     color: #FFF;
     z-index: 100;
+    font-family: 'Play', sans-serif;
+    font-size: 16px;
 }
 #btn {
     text-align: center;
@@ -72,17 +72,26 @@ button {
     font-size: 18px;
     font-weight: bold;
     color: #666
-    background: #CCC;
-    
-
+    background-clor: #CCC;
+    font-family: 'Berkshire Swash', cursive;
+}
 
 
 @media screen and (max-width:768px) {
-    #home {
-        
+    h1 {
+        margin: 0;
+        padding-bottom: 0;
     }
-    #message {
-        padding: 1em;
+    #question input{
+        width: 90%;
+    }
+    #ball {
+        width: 94%;
+    }
+    button {
+        width: 260px;
+        padding: 10px;
+        margin: 0 0 30px 0;
     }
 }
 @media screen and (max-width:480px) {

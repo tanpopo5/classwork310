@@ -1,0 +1,35 @@
+<!DOCUTYPE html>
+<html>
+<head>
+<title>MMP310 Week3</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="app.js"></script>
+     <script>
+x = 50; 
+y = 100; 
+itv = 100;
+         
+dx = new Array( 12,-20, 8,-16, 20, -4, 16, -8, 4,-12,0);
+dy = new Array(-20, 8,-16, 12,-12, 16, -4, 20, -8, 4,0);
+cnt = 0;
+function quakeImage() {
+  document.all["ball"].style.left =  dx[cnt];
+  document.all["ball"].style.top  = dy[cnt];
+  cnt++;
+  if(cnt < dx.length) setTimeout("quakeImage()",itv);
+  else cnt = 0;	
+}
+</script>
+</head>
+<body>
+ <h1>Magic 8-Ball</h1>
+ <p class="backhome"><a href="https://tanpopo5.github.io/classwork310/index.html">Back to HOME</a></p>
+ <p id="question"><input id="qa" placeholder="What you want to know?" /></p>
+     <div id="btn"><button id="submit">Ask the Magic Ball</button></div>
+ <div id="bframe"><img class="ballp" id="ball" src="eightball.png" /></div>
+ <div id="result"><p id="message"></p></div>
+ <script src="app.js"></script>
+</body>
+</html>

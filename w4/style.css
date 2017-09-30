@@ -1,0 +1,90 @@
+body {
+    
+}
+#home {
+    background: #6F4E37;
+    color: #666;
+}
+h1 {
+    text-align: center;
+    padding-bottom: 0.5em;
+}
+
+.backhome {
+    font-size: 14px;
+    padding-bottom: 1.5em;
+}
+.backhome a {
+    text-decoration: none;
+    color: darkgray;
+    border-bottom: 2px dotted #CCC;
+}
+#question {
+   text-align: center;
+    
+}
+#question input{
+    width: 60%;
+    padding: 0.5em;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+input:focus {
+    box-shadow: 0 0 1px #CCC;
+    border: 1px solid #CCC;
+}
+.ballp {
+    position: absolute;
+    
+}
+#bframe {
+    position: relative;
+    margin: 0 auto;
+    width: 410px;
+}
+#ball {
+   top:0;
+   left: 0;
+    z-index: 0;
+}
+img.imgrotate {
+    display: block;
+}
+#result {
+    position: relative;
+    width: 50px;
+    top: 150px;
+    margin: 0 auto;
+}
+#message {
+    text-align: center;
+    color: #FFF;
+    z-index: 100;
+}
+#btn {
+    text-align: center;
+}
+button {
+    width: 400px;
+    padding: 10px 30px;
+    margin: 2em 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #666
+    background: #CCC;
+    
+
+
+
+@media screen and (max-width:768px) {
+    #home {
+        
+    }
+    #message {
+        padding: 1em;
+    }
+}
+@media screen and (max-width:480px) {
+    
+}

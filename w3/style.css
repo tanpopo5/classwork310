@@ -79,5 +79,7 @@ button {
     }
 }
 @media screen and (max-width:480px) {
-    
+    .backhome {
+        padding-bottom: 0;
+    }
 }

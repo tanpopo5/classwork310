@@ -43,6 +43,6 @@ submit.onclick = function () {
     }
     countup();
     
-    setTimeout("location.reload()",5000);
+    //setTimeout("location.reload()",5000);
     
 };

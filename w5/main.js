@@ -1,18 +1,87 @@
 submit.onclick = function () {
-    var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    var upercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-    var lowercase =["a","b","c","d","e","f","g","h","i","g","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-    var symbol = ["+","-","*","/","?","!","@","#","$","%","&"];
-    
     var key = document.getElementById("key");
     var pgLength = document.getElementById("pgLength");
+    var numbers = document.getElementById("numbers");
+    var symboles = document.getElementById("symboles");
     var newpw = document.getElementById("newpw");
     
-    var keyword = key.value;
-    var separator = ",";
-    var keyArray = (keyword).split(separator);
+    var seednumbers = '012345678';
+    var seedletter = 'abcdefghijklmnopqrstuvwxyz';
+    var seedsymbol = '!#$%&()?+';
+    var strings_s1 = seedletter + seedletter.toUpperCase();
+    var strings_s2 = strings_s1 + seednumbers;
+    var strings_s3 = strings_s2 + seedsymbol;
+    var strings_all = seedletter + seedletter.toUpperCase() + seednumbers + seedsymbol;
     
-    console.log(keyArray);
+    
+    var pgLen = parseInt(pgLength.value, 10);
+    //console.log(pgLen);
+    
+    var keyword = key.value;
+    var phrase = "";
+    
+    
+    
+    if (keyword == 0) {
+        if(numbers.checked === true && symboles.checked === true) {
+            for (var i=0; i < pgLen; i++) {
+               phrase += strings_all.charAt(Math.floor(Math.random()*strings_all.length));
+            }
+            //console.log(phrase);
+        }else if (numbers.checked === true) {
+            for (var i=0; i < pgLen; i++) {
+              phrase += strings_s2.charAt(Math.floor(Math.random()*strings_s2.length));
+            }
+            //console.log(phrase);
+        }else if (symboles.checked === true) {
+            for (var i=0; i < pgLen; i++) {
+               phrase += strings_s3.charAt(Math.floor(Math.random()*strings_s3.length));
+            }
+            //console.log(phrase);
+        }else {
+            for (var i=0; i < pgLen; i++) {
+               phrase += strings_s1.charAt(Math.floor(Math.random()*strings_s1.length));
+           }
+            //console.log(phrase);
+        }
+            
+    } else {
+        if(numbers.checked === true && symboles.checked === true) {
+
+            console.log("both checked");
+        }else if (numbers.checked === true) {
+            
+            console.log("number checked");
+        }else if (symboles.checked === true) {
+            
+            console.log("symbol checked");
+        }else {
+            
+            console.log("onlykey");
+        
+        }
+    };
+    
+    
+    
+    
+    
+    
+    /*for (var i=0; i < keyword.length; i++) {
+        var ranNum= Math.floor(Math.random()*keyword.length);
+        if(ranNum === i) {
+            phrase += keyword.charAt(i).toUpperCase();
+        }else{
+            phrase += keyword.charAt(i);
+        }
+    }*/
+
+        //phrase += string.charAt(ranNum);
+    
+   newpw.innerHTML = phrase;
+    
+    //console.log(phrase);
+    
     
     
     

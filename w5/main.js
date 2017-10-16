@@ -6,7 +6,7 @@ submit.onclick = function () {
     var symbols = document.getElementById("symbols");
     var newpw = document.getElementById("newpw");
     
-    var seednumbers = '012345678';
+    var seednumbers = '0123456789';
     var seedletter = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var seedsymbol = '!#$%&()?+';
     var seed_all = seedletter + seednumbers + seedsymbol;

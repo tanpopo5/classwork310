@@ -38,9 +38,9 @@ submit.onclick = function () {
         }
         return keyphrase;
     }
-    
-    if (keyword == 0) {
-        if(numbers.checked === true && symboles.checked === true) {
+  
+    if (keyword.length == 0) {
+        if(numbers.checked && symboles.checked) {
             for (var i=0; i < pgLen; i++) {
                 getPhrase(strings_all);
                //phrase += strings_all.charAt(Math.floor(Math.random()*strings_all.length));
@@ -135,7 +135,7 @@ submit.onclick = function () {
         }
     }
     
-    
+    }
     
     
     
@@ -150,8 +150,8 @@ submit.onclick = function () {
     }*/
 
         //phrase += string.charAt(ranNum);
-    
-   newpw.innerHTML = phrase;
+    console.log(  );
+    newpw.innerHTML = getKeyPhrase(keyword);
     
     //console.log(phrase);
     

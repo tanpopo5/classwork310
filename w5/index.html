@@ -13,10 +13,11 @@
 </header>
 <section>
  <h1>Generate Your Password</h1>
-    <p>Your new password.</p>
-    <p id="keyword">Type your keyword: <input id="key" placeholder="You can type any keyword here" /></p>
+    <p>You can make a password for 6 digit to 20 digit.</p>
+    <p id="keyword">Type your keyword: <input id="key" placeholder="You can type any keyword here" /><br><span id="message"></span></p>
     <p class="pslength">Password Length
-    <select id="pgLength" title="Select the length of your password.">			<option value="6">6</option>
+    <select id="pgLength" title="Select the length of your password.">			
+        <option value="6">6</option>
 	  	<option value="7">7</option>
         <option value="8">8</option>
         <option value="9">9</option>
@@ -26,15 +27,21 @@
 	   <option value="13">13</option>
 	   <option value="14">14</option>
 	   <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+
     </select></p>
-    <p>Numbers<input type="checkbox" id="numbers" /> Symboles<input type="checkbox" id="symboles" />
+    <p>Numbers<input type="checkbox" id="numbers" /> Symbols<input type="checkbox" id="symbols" />
     </p>
     <div id="btn"><button id="submit">Generate your password</button>
         
         </div>
     
     <div id="result"><p id="newpw"></p></div>
-    <script src="main.js"></script>
+    <script src="main2.js"></script>
 </section>
 </body>
 </html>

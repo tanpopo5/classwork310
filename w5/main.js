@@ -1,169 +1,94 @@
 submit.onclick = function () {
     var key = document.getElementById("key");
+    var message = document.getElementById("message");
     var pgLength = document.getElementById("pgLength");
     var numbers = document.getElementById("numbers");
-    var symboles = document.getElementById("symboles");
+    var symbols = document.getElementById("symbols");
     var newpw = document.getElementById("newpw");
     
     var seednumbers = '012345678';
-    var seedletter = 'abcdefghijklmnopqrstuvwxyz';
+    var seedletter = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var seedsymbol = '!#$%&()?+';
-    var strings_s1 = seedletter + seedletter.toUpperCase();
-    var strings_s2 = strings_s1 + seednumbers;
-    var strings_s3 = strings_s2 + seedsymbol;
-    var strings_s4 = seednumbers + seedsymbol;
-    var strings_all = seedletter + seedletter.toUpperCase() + seednumbers + seedsymbol;
-    
-    
-    var pgLen = parseInt(pgLength.value, 10);
-    //console.log(pgLen);
-    
+    var seed_all = seedletter + seednumbers + seedsymbol;
+    var seed_chnum = seedletter + seednumbers;
+    var seed_chsym = seedletter + seedsymbol;
+     
     var keyword = key.value;
     var phrase = "";
-    var keyphrase ="";
-    var ranNum= Math.floor(Math.random()*keyword.length);
+    var addtext ="";
+    var addseed;
     
-    function getPhrase(sed) {
-        phrase += sed.charAt(Math.floor(Math.random()*sed.length));
-        return phrase;
-    }
+    var pgLen = parseInt(pgLength.value, 10);
+    var addLen = pgLen-(keyword.length);
     
     function getKeyPhrase(ph) {
-        for (var i=0; i < keyword.length; i++) {
-        var ranNum= Math.floor(Math.random()*keyword.length);
+        for (var i=0; i < ph.length; i++) {
+        var ranNum= Math.floor(Math.random()*ph.length);
         if(ranNum === i) {
-            keyphrase += keyword.charAt(i).toUpperCase();
+            keyphrase += ph.charAt(i).toUpperCase();
         }else{
-            keyphrase += keyword.charAt(i);
+            keyphrase += ph.charAt(i);
         }
+      }
         return keyphrase;
     }
-  
-    if (keyword.length == 0) {
-        if(numbers.checked && symboles.checked) {
+    
+    if(keyword.length == 0) {
+        if(numbers.checked && symbols.checked) {
             for (var i=0; i < pgLen; i++) {
-                getPhrase(strings_all);
-               //phrase += strings_all.charAt(Math.floor(Math.random()*strings_all.length));
+               phrase += seed_all[Math.floor(Math.random()*seed_all.length)];
             }
             
-        }else if (numbers.checked === true) {
+        }else if (numbers.checked) {
             for (var i=0; i < pgLen; i++) {
-                getPhrase(strings_s2);
-              //phrase += strings_s2.charAt(Math.floor(Math.random()*strings_s2.length));
+              phrase += seed_chnum[Math.floor(Math.random()*seed_chnum.length)];
             }
             
-        }else if (symboles.checked === true) {
+        }else if (symbols.checked) {
             for (var i=0; i < pgLen; i++) {
-                getPhrase(strings_s3);
-               //phrase += strings_s3.charAt(Math.floor(Math.random()*strings_s3.length));
+                phrase += seed_chsym[Math.floor(Math.random()*seed_chsym.length)];
             }
         }else {
             for (var i=0; i < pgLen; i++) {
-                getPhrase(strings_s1);
-               //phrase += strings_s1.charAt(Math.floor(Math.random()*strings_s1.length));
+                phrase += seedletter[Math.floor(Math.random()*seedletter.length)];
            }
             
         }
-            
-    } else {
-        if (keyword.length < 6 && pgLen <= 6 ) {
-           var addtext ='';
-            
-             if(numbers.checked === true && symboles.checked === true) {
-                 for (var j=0; j< 6-keyword.length; j++){
-                   addtext += strings_s4.charAt(Math.floor(Math.random()*strings_s4.length));
-                 }
-                 var addseed = keyword + addtext;
-                 for (var k=0; k < addseed.length; k++) {
-                     getPhrase(addseed);
-                 }
-                    
-             }else if (numbers.checked === true) {
-                 for (var j=0; j< 6-keyword.length; j++){
-                   addtext += seednumbers.charAt(Math.floor(Math.random()*seednumbers.length));
-                 }
-                 var addseed = keyword + addtext;
-                 for (var k=0; k < addseed.length; k++) {
-                     getPhrase(addseed);
-                 }
-            }else if (symboles.checked === true) {
-                for (var j=0; j< 6-keyword.length; j++){
-                   addtext += seedsymbol.charAt(Math.floor(Math.random()*seedsymbol.length));
-                 }
-                 var addseed = keyword + addtext;
-                for (var k=0; k < addseed.length; k++) {
-                     getPhrase(addseed);
-                 }
-            }else {
-                for (var j=0; j< 6-keyword.length; j++){
-                   addtext += strings_all.charAt(Math.floor(Math.random()*strings_all.length));
-                 }
-                 var addseed = keyword + addtext;
-                for (var k=0; k < addseed.length; k++) {
-                     getPhrase(addseed);
-                 }
-            }
-            
+    }else if(addLen < 0) {
+        message.innerHTML = "*Enter the keyword less them password length.";
+    
+    }else {
 
-        
-            
-        }else{
-        
-            if(numbers.checked === true && symboles.checked === true) {
+        var keyphrase ="";
+
+        if(numbers.checked && symbols.checked) {
+            for (var j=0; j< addLen; j++){
+                   addtext += seed_all[Math.floor(Math.random()*seed_all.length)];
+                 }
                 
-                var seedkey1 = keyphrase + numbers + symboles;
-                for (var i=0; i < pgLen; i++) {
-                  getPhrase(seedkey1);
-                  //phrase += seedkey1.charAt(Math.floor(Math.random()*strings_s1.length));
-                }
-                    
-             }else if (numbers.checked === true) {
-                 var seedkey2 = keyphrase + numbers;
-                 for (var i=0; i < pgLen; i++) {
-                     getPhrase(seedkey2);
-                  //phrase += seedkey2.charAt(Math.floor(Math.random()*strings_s1.length));
+                phrase = getKeyPhrase(keyword) + addtext;
+        }else if (numbers.checked) {
+            for (var j=0; j< addLen; j++){
+                   addtext += seed_chnum[Math.floor(Math.random()*seed_chnum.length)];
                  }
-            }else if (symboles.checked === true) {
-                var seedkey3 = keyphrase + symboles;
-                for (var i=0; i < pgLen; i++) {
-                    getPhrase(seedkey3);
-                  //phrase += seedkey3.charAt(Math.floor(Math.random()*strings_s1.length));
-                }
-            }else {
-                phrase = keyword;
-            }
+                phrase = getKeyPhrase(keyword) + addtext;
+            
+        }else if (symbols.checked) {
+            for (var j=0; j< addLen; j++){
+                   addtext += seed_chsym[Math.floor(Math.random()*seed_chsym.length)];
+                 }
+            phrase = getKeyPhrase(keyword) + addtext;
+        }else {
+            for (var j=0; j< addLen; j++){
+                   addtext += seedletter[Math.floor(Math.random()*seedletter.length)];
+                 }
+            phrase = getKeyPhrase(keyword) + addtext;
         }
+        
+        
     }
     
-    }
     
-    
-    
-    
-    /*for (var i=0; i < keyword.length; i++) {
-        var ranNum= Math.floor(Math.random()*keyword.length);
-        if(ranNum === i) {
-            phrase += keyword.charAt(i).toUpperCase();
-        }else{
-            phrase += keyword.charAt(i);
-        }
-    }*/
+     newpw.innerHTML = phrase;
 
-        //phrase += string.charAt(ranNum);
-    console.log(  );
-    newpw.innerHTML = getKeyPhrase(keyword);
-    
-    //console.log(phrase);
-    
-    
-    
-    
-    //var randomess = eightball[Math.floor(Math.random()*eightball.length)];
-    
-        //挿入サンプル
-        /*function insertStr(str, index, insert) {
-    return str.slice(0, index) + insert + str.slice(index, str.length);
-}*/
-    
-    
 };

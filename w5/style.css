@@ -1,0 +1,102 @@
+body { background-color: #1A1A1D; }
+
+h1 {
+    text-align: center;
+    color: #C3073F;
+    padding-bottom: 0.5em;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    margin-top: 0;
+}
+.mframe p{
+    text-align: center;
+    color: #FFF;
+    font-family: 'Aldrich', sans-serif;
+}
+.backhome {
+    font-size: 14px;
+    padding-bottom: 1em;
+}
+.backhome a {
+    text-decoration: none;
+    color: #FFF;
+    border-bottom: 2px dotted #CCC;
+}
+
+#keyword input{
+    width: 60%;
+    padding: 0.5em;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+#keyword input:focus {
+    box-shadow: 0 0 1px #CCC;
+    border: 1px solid #CCC;
+}
+#result {
+
+}
+#message {
+    text-align: center;
+    color: #C3073F;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    padding-top: 10px;
+}
+#btn {
+    text-align: center;
+}
+button {
+    width: 400px;
+    padding: 10px 30px;
+    margin: 0.5em 0 0 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #1A1A1D;
+    border: dashed 2px #950740;
+    font-family: 'Orbitron', sans-serif;
+    outline: none;
+}
+button:hover {
+    background-color: #6F2232;
+}
+#newpw {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    color: #C3073F;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    padding: 60px 0;
+    font-family: 'Aldrich', sans-serif;
+}
+
+@media screen and (max-width:768px) {
+    h1 {
+        margin: 0;
+        padding-bottom: 0;
+    }
+    #keyword input{
+        width: 90%;
+    }
+    #result {
+    }
+    button {
+        width: 260px;
+        padding: 10px;
+    }
+}
+@media screen and (max-width:480px) {
+    
+    .backhome {
+        padding-bottom: 0;
+    }
+    #result {
+        
+    }
+    button {
+        margin: 0;
+    }
+}

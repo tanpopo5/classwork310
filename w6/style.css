@@ -1,0 +1,70 @@
+#container {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #FFF;
+    padding: 1em;
+    font-family: 'Raleway', sans-serif;
+}
+
+.task {
+    padding: 1em;
+    border: 1px solid #CCC;
+    background-color: white;
+    word-break: break-all;
+    line-height: 1.5em;
+    border-right: 10px solid lightblue;
+    
+}
+
+
+.task .usr {
+    color: gray;
+    font-family: 'Raleway', sans-serif;
+}
+
+.usr {
+    margin-left: 5px;
+}
+
+.add-task {
+    margin-top: 1em;
+    padding: 5px;
+    background-color: lightblue;
+}
+
+.add-task input {
+    border: none;
+    padding: 5px;
+}
+
+.add-task input:focus {
+    outline: none;
+    border-bottom: 1px solid blue;
+}
+
+.ntask input {
+    width: 400px;
+}
+
+.add-task button {
+
+    margin-top: 1em;
+    
+}
+button {
+    
+    padding: 10px 30px;
+    margin: 0 0 10px 5px ;
+    font-size: 15px;
+    font-weight: bold;
+    color: #5f9ea0;
+    background-color: ##b0e0e6;
+    border: solid 1px #c0c0c0CCC;
+    font-family: 'Raleway', sans-serif;
+    outline: none;
+}
+
+.delete {
+   float: right;
+   text-decoration: underline;
+}

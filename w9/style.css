@@ -1,0 +1,62 @@
+#container {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    background-color: #CBF3F0;
+}
+#gamescore {
+    color: #FF6B6B;
+    font-size: 20px;
+    margin: 4px 0;
+}
+#game {
+    width: 800;
+    margin: 0 auto;
+}
+h1 {
+    color: #2EC4B6;
+}
+input[type=text] {
+    width: 400px;
+    padding: 6px;
+    font-size: 14px;
+}
+#reset {
+    text-decoration: none;
+    color: darkblue;
+    font-size: 14px;
+}
+.card {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    background: #FFCA84;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 3px dotted #FF9F1C;
+     -webkit-transition: -webkit-transform 2s;
+    -moz-transition: -moz-transform 2s;
+    -o-transition: -o-transform 2s;
+    transition: transform 2s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
+}
+
+.card.flipped {
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}
+
+
+.card img{
+    width: 100%;
+    height: 100%;
+     transform: rotateY( 180deg );
+    
+}

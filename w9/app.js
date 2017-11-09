@@ -47,9 +47,6 @@ $(document).ready(function(){
                 $('.card').click(function(){
                     const $card = $(this);
                    
-                    /*$card.flip({
-                        
-                    });*/
                     //reveal image;
                     $card.toggleClass('flipped');
                     $card.children().show();

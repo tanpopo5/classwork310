@@ -6,7 +6,7 @@ $(document).ready(function(){
             var query = this.value;
             var key = "A7Dqv4QCeJWJQA5bobMoMNA8QjFocQYy";
             var url = "https://api.giphy.com/v1/gifs/search?q=" + query + "&api_key=" + key + "&limit=6";
-            $.getJSON(url, function(json){
+            $.getJSON(url, function(json) {
                 
                 /* memory game */
                 
@@ -16,8 +16,8 @@ $(document).ready(function(){
                 
                 // place image into a grid
                 // obscure images
-                var $game=$('#game');
-                var matches=2;
+                var $game = $('#game');
+                var matches = 2;
                 for(let j=0; j< matches; j++){
                 
                 
@@ -83,7 +83,7 @@ $(document).ready(function(){
                             //$card.children().delay(1000).hide(0);
                             $card.children().delay(1000).hide(0);
                             for(let i =0; i<clickedCards.length; i++){
-                                clickedCards[i].img.delay(1000).hide(0);
+                                clickedCards[i].img.delay(1200).hide(0);
                             }
                             
                             

@@ -5,7 +5,7 @@ $(document).ready(function(){
             /* keyCode 13 is the enter key to submit query */
             var query = this.value;
             var key = "A7Dqv4QCeJWJQA5bobMoMNA8QjFocQYy";
-            var url = "http://api.giphy.com/v1/gifs/search?q=" + query + "&api_key=" + key + "&limit=6";
+            var url = "https://api.giphy.com/v1/gifs/search?q=" + query + "&api_key=" + key + "&limit=6";
             $.getJSON(url, function(json){
                 
                 /* memory game */

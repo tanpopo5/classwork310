@@ -11,7 +11,7 @@ body {
     margin: 4px 0;
 }
 #game {
-    width: 800;
+    width: 800px;
     margin: 0 auto;
 }
 h1 {
@@ -52,12 +52,6 @@ input[type=text] {
     -o-transform: rotateY( 180deg );
     /*transform: rotateY( 180deg );*/
 }
-
-/*.card:hover {
-    background-color: #FFF;
-    border-color: #e20071;
-}*/
-
 
 .card img{
     width: 100%;

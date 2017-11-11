@@ -21,18 +21,18 @@ $(document).ready(function(){
                 for(let j=0; j< matches; j++){
                 
                 
-                for (let i=0; i<json.data.length; i++){
-                    var img=json.data[i];
-                    var div = $('<div>')
-                         .addClass('card')
-                         .attr('data-num', i);
-                    var imgElem = new Image();
-                    imgElem.src=img.images.downsized.url;
-                    imgElem.style.display ="none";
-                    div.append(imgElem);
-                    
-                    cards.push(div);
-                }
+                    for (let i=0; i<json.data.length; i++){
+                        var img=json.data[i];
+                        var div = $('<div>')
+                             .addClass('card')
+                             .attr('data-num', i);
+                        var imgElem = new Image();
+                        imgElem.src=img.images.downsized.url;
+                        imgElem.style.display ="none";
+                        div.append(imgElem);
+
+                        cards.push(div);
+                    }
                 }
                 console.log(cards);
                 cards.sort(function() {return 0.5 - Math.random() });
@@ -41,19 +41,24 @@ $(document).ready(function(){
                     $game.append(cards[i]);
                 }
                 
+                
                 var clickedCards = [];
                 var points = 0;
+                var count = 0;
+                
+                
                 //each card/image needs click event
                 $('.card').click(function(){
                     const $card = $(this);
                    
                     //reveal image;
-                    $card.toggleClass('flipped');
+                    $card.addClass(' flipped');
                     $card.children().show();
-                    
                     
                      // is three another image to compare
                     if(clickedCards.length == matches-1) {
+                        console.log(clickedCards);
+                        //console.log($card.data().num);
                         // compare images
                         var allMatch = true;
                         for(let i =0; i<clickedCards.length; i++){
@@ -61,6 +66,7 @@ $(document).ready(function(){
                                  allMatch=false;
                              }
                         }
+                        
                         
                         if(allMatch){
                             //match, stay face up
@@ -80,12 +86,14 @@ $(document).ready(function(){
                             
                         }else{
                             //not a match, hide the images
-                            //$card.children().delay(1000).hide(0);
-                            $card.children().delay(1000).hide(0);
-                            for(let i =0; i<clickedCards.length; i++){
-                                clickedCards[i].img.delay(1200).hide(0);
-                            }
                             
+                            //$card.children().delay(1000).hide(0);
+                            
+                            $card.children().delay(600).hide(0);
+                            for(let i =0; i<clickedCards.length; i++){
+                               clickedCards[i].img.delay(600).hide(0);
+                             
+                            }
                             
                         }
                         // clear the current image
@@ -97,16 +105,8 @@ $(document).ready(function(){
                             num: $card.data().num,
                             img: $card.find('img')
                         });
-                    }
-                        
-                    
-                   
-                    
-                    
+                    } 
                 });
-                
-                   
-
             });
         }
     });

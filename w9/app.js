@@ -20,7 +20,6 @@ $(document).ready(function(){
                 var matches = 2;
                 for(let j=0; j< matches; j++){
                 
-                
                     for (let i=0; i<json.data.length; i++){
                         var img=json.data[i];
                         var div = $('<div>')
@@ -46,10 +45,51 @@ $(document).ready(function(){
                 var points = 0;
                 var count = 0;
                 
+                //Add Timer
+                    var setSecond = 60;
+                    var setPause = setSecond;
+                    var time = setSecond;
+                    var timerID;
+                    
+                    //show timer
+                    function textDisplay(){
+                        var showtime= "0:"+time;
+                        $("#countDown").text(showtime);
+                    };
+                    
+                    // countdown func
+                    function countDown(){
+                        time--;
+                        setPause = time;
+                        textDisplay();
+                    }
+                    
+                    function countStop(){
+                        clearInterval(timerID);
+                    }
+                    
+                    function timerStart(){
+                        countStop();
+                        timerID = setInterval(function(){
+                            if(time<=0){
+                                clearInterval(timerID);
+                            }else{
+                                countDown();
+                            }
+                        }, 1000);
+                    }
                 
                 //each card/image needs click event
                 $('.card').click(function(){
                     const $card = $(this);
+                    
+                    
+                    
+                    time= setPause;
+                    textDisplay();
+                    timerStart();
+                    
+                    
                    
                     //reveal image;
                     $card.addClass(' flipped');
@@ -79,6 +119,7 @@ $(document).ready(function(){
                             if(points == cards.length/2){
                                 $score.html("Congraturation!");
                                 $reset.html("<a href='index.html' class='rest'>Reset the game</a>");
+                                countStop();
                             }else{
                                 $score.html("Your Score: "+ points );
                                 
@@ -86,7 +127,6 @@ $(document).ready(function(){
                             
                         }else{
                             //not a match, hide the images
-                            
                             //$card.children().delay(1000).hide(0);
                             
                             $card.children().delay(600).hide(0);
@@ -107,7 +147,17 @@ $(document).ready(function(){
                         });
                     } 
                 });
+                
+                $('.reset').click(function(){
+                    countStop();
+                    time=setPause=setSecond;
+                    textDisplay();
+                });
+                
+                
             });
+            
+            
         }
     });
 });

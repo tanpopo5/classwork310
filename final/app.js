@@ -2,6 +2,7 @@ var map;
 var marker;
 var markers = [];
 var inforwindow;
+var count=0;
 
 function initMap() {
     var styles = [
@@ -97,18 +98,21 @@ function initMap() {
                clist.appendChild(p);
             
                //Show the info when it clicked
+                
                 p.onclick = function() {
                     this.children[0].style.opacity = 1;
                     //If the place has rating over 4.5, background image will change
                     if(this.children[0].getAttribute("data-num")>=4.5){
                       this.style.width = "118px";
                       this.style.height = "118px";
-                      this.style.backgroundImage = "url('heart.png')"; 
+                      this.style.backgroundImage = "url('heart.png')";
+                    
+                      count++;
+                      var score = document.getElementById('score');
+                        score.innerHTML = "You got " + count + "/20 heart!"
                     }
                 }
             
-
-
 
                 if (!place.geometry) {
                     console.log("Returned place contains no geometry");
@@ -128,48 +132,6 @@ function initMap() {
             });
 
         map.fitBounds(bounds);
-
-        //function generateGraph(len){
-        /*var canvas = document.getElementById("canvas");
-        var ctx = canvas.getContext('2d');
-            var num = places.length;
-        //max width size
-        var w=canvas.width;
-        //max height size
-        var h=canvas.height;
-        var count=0;
-        function render(){
-            ctx.clearRect(0,0, w, h);
-          for(var i=0; i<num; i++){ 
-            var name = places[i].name;
-            ctx.beginPath();
-            //center of circle
-            var x=Math.floor(Math.random()*(w-1))+1;
-            var y=Math.floor(Math.random()*(h-1))+1;
-           // circle r
-            var r=Math.floor(Math.random()*100)+1;
-            //random color
-            var col = generateRandomColor();
-          
-            ctx.arc(x+count, y, r, 0, Math.PI*2, false);
-            ctx.strokeStyle = col;
-            ctx.fillStyle = col;
-            ctx.globalAlpha = '1.0';
-            ctx.fill();
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.fillStyle = "black";
-            ctx.fillText(name, x+count, y);
-            ctx.fill();
-              if(count>canvas.width){
-                  count =0;
-              }else{
-                  count+=1
-              }
-         }
-        }
-            setInterval(render,1000/1);
-        //}*/
 
     });
 
@@ -191,11 +153,6 @@ function initMap() {
         handleLocationError(false, infoWindow, map.getCenter());
     }
 
-
-    //var service = new google.maps.places.PlacesService(map);
-    //service.textSearch(places, callback);
-
-
 }
 
 function createMarker(place) {
@@ -215,29 +172,11 @@ function createMarker(place) {
 }
 
 
-function callback(results, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-//        var marker = new google.maps.Marker({
-//            map: map,
-//            place: {
-//                placeId: results[0].place_id,
-//                location: results[0].geometry.location
-//            }
-//        });
-//        google.maps.event.addListener(marker, 'click', function () {
-//            infowindow.setContent(place.name);
-//            infowindow.open(map, this);
-//        });
-       
-    }
-}
-
 function clearChildNodes(elm) {
     while (elm.hasChildNodes()) {
         elm.removeChild(elm.lastChild);
     }
 }
-
 
 
 function generateRandomColor() {

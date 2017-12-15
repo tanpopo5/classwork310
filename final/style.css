@@ -9,8 +9,14 @@ html, body {
 }
 h1, p{
     text-align: center;
+    color: #333;
 }
-
+#score {
+    text-align: center;
+    font-size: 30px;
+    color: #333;
+    padding: 10px 0;
+}
 .controls {
         margin-top: 10px;
         border: 1px solid transparent;

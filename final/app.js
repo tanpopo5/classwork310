@@ -3,6 +3,7 @@ var marker;
 var markers = [];
 var inforwindow;
 var count=0;
+var ctFlag = false;
 
 function initMap() {
     var styles = [
@@ -44,6 +45,8 @@ function initMap() {
 
     map.addListener('bounds_changed', function () {
         searchBox.setBounds(map.getBounds());
+        count=0;
+        score.innerHTML = "You got " + count + "/20 heart!<br>";
     });
 
 
@@ -72,11 +75,16 @@ function initMap() {
         var list = document.getElementById("list");
         var newDiv = document.createElement("div");
         newDiv.setAttribute("id", "clist");
+        var score = document.getElementById('score');
 
         //Clear out the old lists
         if (clist.hasChildNodes()) {
             clearChildNodes(clist);
+            ctFlag = true;
+
         }
+        
+        
             
         places.forEach(function (place) {
                 var p = document.createElement("p");
@@ -96,6 +104,9 @@ function initMap() {
                targetspan.appendChild(ht);
                p.appendChild(targetspan);
                clist.appendChild(p);
+               
+            
+            
             
                //Show the info when it clicked
                 
@@ -106,11 +117,11 @@ function initMap() {
                       this.style.width = "118px";
                       this.style.height = "118px";
                       this.style.backgroundImage = "url('heart.png')";
-                    
+                      
                       count++;
-                      var score = document.getElementById('score');
-                        score.innerHTML = "You got " + count + "/20 heart!"
+                    
                     }
+                    score.innerHTML = "You got " + count + "/20 heart!<br>";
                 }
             
 
@@ -166,7 +177,7 @@ function createMarker(place) {
     markers.push(marker);
 
     google.maps.event.addListener(marker, 'click', function () {
-        infowindow.setContent("" + place.name + " " + place.rating);
+        infowindow.setContent("<b>" + place.name + "</b><br>"+ place.formatted_address);
         infowindow.open(map, this);
     });
 }

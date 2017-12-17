@@ -46,7 +46,7 @@ function initMap() {
     map.addListener('bounds_changed', function () {
         searchBox.setBounds(map.getBounds());
         count=0;
-        score.innerHTML = "You got " + count + "/20 heart!<br>";
+        score.innerHTML = "You got " + count + " heart!<br>";
     });
 
 
